@@ -2,7 +2,7 @@
 config defaults
 	option input 'ACCEPT'
 	option output 'ACCEPT'
-	option fullcone '1'
+	option synflood_protect '1'
 	option forward 'ACCEPT'
 
 config zone
@@ -14,12 +14,11 @@ config zone
 
 config zone
 	option name 'wan'
+	list network 'wan'
+	list network 'wan6'
 	option output 'ACCEPT'
 	option masq '1'
 	option mtu_fix '1'
-	list network 'wan'
-	list network 'wan6'
-	list network 'wwan'
 	option input 'ACCEPT'
 	option forward 'ACCEPT'
 
@@ -132,17 +131,10 @@ config rule
 config include
 	option path '/etc/firewall.user'
 
-config include 'miniupnpd'
-	option type 'script'
-	option path '/usr/share/miniupnpd/firewall.include'
-	option family 'any'
-	option reload '1'
-
 config redirect
 	option dest 'lan'
 	option target 'DNAT'
-	option name 'MMDVM'
+	option name '4G'
 	option src 'wan'
 	option src_dport '1-65535'
-	option dest_port '1-65535'
 
