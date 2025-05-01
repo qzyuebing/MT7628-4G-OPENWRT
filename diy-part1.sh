@@ -21,4 +21,6 @@ sed -i '$a src-git mmdvm https://github.com/qzyuebing/mmdvm-openwrt' feeds.conf.
 #sed -i '$a src-git mmdvm https://github.com/lazywalker/mmdvm-openwrt' feeds.conf.default
 sed -i '$a src-git devtools https://github.com/lazywalker/devtools-feeds' feeds.conf.default
 sed -i '$a src-git modem_feeds https://github.com/FUjr/modem_feeds' feeds.conf.default
+sed -i '$a src-git 5G-Modem https://github.com/Siriling/5G-Modem-Support' feeds.conf.default
+
 
